@@ -33,7 +33,6 @@ button#dropdownMenuButton.btn.btn-secondary:active {
 .navbar-brand {
     padding-top: 1rem;
     padding-left: 6rem;
-
     margin: auto;
 }
 
@@ -49,9 +48,11 @@ button#dropdownMenuButton.btn.btn-secondary:active {
 
 .twobuttons {
     /*padding-top: 2rem;*/
+    /*margin-left: 45%;
+    position:relative;*/
+    display: flex;
+    justify-content: center;
     padding-bottom: 5rem;
-    margin-left: 45%;
-    position:relative;
 }
 
 .container {
@@ -62,12 +63,18 @@ button#dropdownMenuButton.btn.btn-secondary:active {
 }
 
 .container2 {
-    margin-left: 28%;
-    position: relative;
+    /*margin-left: 28%;
+    position: relative;*/
+    display: flex;
+    flex-direction: column;
 }
 
 div.container2 {
     box-sizing: border-box;
+}
+
+.card {
+    margin: auto;
 }
 
 .card-header div:first-child {
@@ -128,11 +135,13 @@ span {
     background-color: rgb(6, 167, 6);
     border-color: rgb(6, 167, 6);
     font-size: medium;
+    box-shadow: none !important;
 }
 
 .btn-primary:hover {
     background-color: rgb(7, 143, 7);
     border-color: rgb(7, 143, 7);
+    box-shadow: none !important;
 }
 
 .btn-secondary {
@@ -164,6 +173,7 @@ label.btn.btn-outline-primary,
 label.btn.btn-outline-primary:hover {
     border: none;
     background-color: transparent;
+    box-shadow: none !important;
 }
 
 .btn-group {
