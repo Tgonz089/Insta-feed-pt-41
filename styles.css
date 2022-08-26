@@ -1,0 +1,183 @@
+.container-fluid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 5px;
+    width: 100%;
+    z-index: 1;
+    background-color: whitesmoke;
+}
+
+button#dropdownMenuButton.btn.btn-secondary {
+    margin-top: 10px;
+    background-color: transparent;
+    color: gray !important;
+    box-shadow: none !important;
+    border: 0px;
+}
+
+button#dropdownMenuButton.btn.btn-secondary:hover {
+    background-color: rgb(231, 226, 226) !important;
+}
+
+button#dropdownMenuButton.btn.btn-secondary:active {
+    background-color: rgb(231, 226, 226) !important;
+}
+
+.d-flex {
+    padding-right: 6rem;
+
+    margin-left: 1%;
+}
+
+.navbar-brand {
+    padding-top: 1rem;
+    padding-left: 6rem;
+
+    margin: auto;
+}
+
+.navbar-brand svg {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.navbar-brand strong {
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+}
+
+.twobuttons {
+    /*padding-top: 2rem;*/
+    padding-bottom: 5rem;
+    margin-left: 45%;
+    position:relative;
+}
+
+.container {
+    /* margin-left: 17%;*/
+    /*padding-left: 3%;*/
+    margin-left: auto;
+    position:relative;
+}
+
+.container2 {
+    margin-left: auto;
+    position:relative;
+}
+
+div.container2 {
+    box-sizing: border-box;
+}
+
+.card-header div:first-child {
+    display: inline-block !important;
+    width: 80%;
+}
+
+.card-header div:last-child {
+    display: inline-block;
+    width: 17%;
+    padding: 10px;
+    text-align: right;
+    color: gray;
+}
+
+.card-footer div:first-child {
+    display: inline-block !important;
+    width: 5%;
+}
+
+.card-footer div:last-child {
+    display: inline-block;
+    width: 33%;
+    padding: 5px;
+    text-align: right;
+    color: grey;
+}
+
+.comment {
+    display: inline-block !important;
+    color: grey;
+    width: 55%;
+    font-size: large;
+}
+
+.card-text {
+    font-size: large;
+}
+
+.card-likes {
+    font-size: medium;
+}
+
+h5 {
+    font-size: xx-large;
+}
+
+span {
+    font-size: medium;
+}
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.btn-primary,
+.btn-primary:active {
+    background-color: rgb(6, 167, 6);
+    border-color: rgb(6, 167, 6);
+    font-size: medium;
+}
+
+.btn-primary:hover {
+    background-color: rgb(7, 143, 7);
+    border-color: rgb(7, 143, 7);
+}
+
+.btn-secondary {
+    background-color: rgb(6, 167, 6);
+    border-color: rgb(6, 167, 6);
+    font-size: medium;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid rgb(180, 178, 178);
+    padding: 10px 20px;
+}
+
+.btn-close {
+    background: transparent;
+}
+
+button.btn.btn-secondary,
+button.btn.btn-secondary:active {
+    border: 1px solid rgb(180, 178, 178);
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: gray !important;
+    outline: none;
+}
+
+label.btn.btn-outline-primary,
+label.btn.btn-outline-primary:hover {
+    border: none;
+    background-color: transparent;
+}
+
+.btn-group {
+    border: 1px solid rgb(180, 178, 178);
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: gray !important;
+    border: 0px;
+    outline: none;
+    z-index: 0;
+}
+
+.btn-group input[type=radio]:checked+label {
+    background-color: rgb(193, 192, 192);
+    box-shadow: none !important;
+    border: 0px;
+}

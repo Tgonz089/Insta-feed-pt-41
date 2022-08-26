@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Instagram Feed</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" width="25"
+                        height="24" class="d-inline-block align-text-top"><strong>Instagram</strong></a>
+                <form class="d-flex" role="search">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                        Create a new post
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <button type="button" class="btn-close" data-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+                                            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                            <path
+                                                d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+                                        </svg>
+                                    </button>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+                                            <path fill-rule="evenodd"
+                                                d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="twobuttons">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" onclick="window.location.href='index.html'" for="btnradio2"></a> <svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-grid-3x3-gap"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z" />
+                </svg></label>
+
+            <input type="radio" onclick="window.location.href='page2.html'" class="btn-check" name="btnradio"
+                id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" class="bi bi-app" viewBox="0 0 16 16">
+                    <path
+                        d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z" />
+                </svg>
+
+            </label>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>My first photo</h5>
+                </div>
+                <div>
+                    <span>12/14</span>
+                </div>
+            </div>
+            <img class="card-img" src="https://i.gifer.com/JT19.gif" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">23 Likes</p>
+                <p class="card-text"><strong>Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>New family member!</h5>
+                </div>
+                <div>
+                    <span>12/25</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://www.rover.com/blog/wp-content/uploads/2019/09/Labrador_Retriever-min-1-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">45 Likes</p>
+                <p class="card-text"><strong>Added a new member to the family today!</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Food</h5>
+                </div>
+                <div>
+                    <span>1/24</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://gourmade.com/wp-content/uploads/2018/02/LasagneAlForno_600g_Cropped-Retouched-SRGB-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">40 Likes</p>
+                <p class="card-text"><strong>Just an image of my plate.</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>New build</h5>
+                </div>
+                <div>
+                    <span>2/3</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://static.dezeen.com/uploads/2021/12/framework-modular-laptop-design_dezeen_2364_sq-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">23 Likes</p>
+                <p class="card-text"><strong>Time for for upgrades!</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Almost that time of year!</h5>
+                </div>
+                <div>
+                    <span>5/20</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://content.resale.ticketmaster.com/graphics/TMResale/1/Images/Website%20Images/college-splash/football-generic.png"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">36 Likes</p>
+                <p class="card-text"><strong>Will we make the Playoffs?!</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Exploring the sea</h5>
+                </div>
+                <div>
+                    <span>6/3</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://reefbuilders.com/wp-content/blogs.dir/1/files/2011/07/clownfish-percula-amphiprion-percula-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">30 Likes</p>
+                <p class="card-text"><strong>This is an image I captured of a clown fish.</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Gaming</h5>
+                </div>
+                <div>
+                    <span>7/6</span>
+                </div>
+            </div>
+            <img class="card-img" src="https://10beasts.com/images/Gaming-Keyboard-Illustration-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">1000 Likes</p>
+                <p class="card-text"><strong>New game out!</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Nature</h5>
+                </div>
+                <div>
+                    <span>09/22</span>
+                </div>
+            </div>
+            <img class="card-img" src="https://musicbakery.com/wp-content/uploads/2017/01/natural-wonders-300x300.jpg"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">900 Likes</p>
+                <p class="card-text"><strong>We need to protect this world.</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="width: 75rem;">
+            <div class="card-header">
+                <div>
+                    <h5>Nightlife!</h5>
+                </div>
+                <div>
+                    <span>10/31</span>
+                </div>
+            </div>
+            <img class="card-img"
+                src="https://store-images.s-microsoft.com/image/apps.32684.13510798886372821.26ecc19f-0fa7-42b7-b574-a31e1e74c4ad.f263e4de-265a-4488-a469-38318672ec31?mode=scale&q=90&h=300&w=300"
+                alt="Card image cap">
+            <div class="card-body">
+                <p class="card-likes">800</p>
+                <p class="card-text"><strong>It's blinding!</strong></p>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                </div>
+                <div class="comment">
+                    <p>Comment...</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>
