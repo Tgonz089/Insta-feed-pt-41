@@ -8,6 +8,7 @@
     background-color: whitesmoke;
 }
 
+/*This will center make the gear icon background transparent for the gear on standard, hover, and active*/
 button#dropdownMenuButton.btn.btn-secondary {
     margin-top: 10px;
     background-color: transparent;
@@ -24,27 +25,32 @@ button#dropdownMenuButton.btn.btn-secondary:active {
     background-color: rgb(231, 226, 226) !important;
 }
 
+/*This will provide some space off the right for the gear icon.*/
 .d-flex {
     padding-right: 6rem;
     margin-left: 1%;
 }
 
+/*This will center and provide a bit of space on the top and bottom for the navbar.*/
 .navbar-brand {
     padding-top: 1rem;
     padding-left: 6rem;
     margin: auto;
 }
 
+/*This will resize the Instagram logo icon.*/
 .navbar-brand svg {
     height: 30px !important;
     width: 30px !important;
 }
 
+/*This is a custom font for the instagram.*/
 .navbar-brand strong {
     font-family: 'Lobster Two', cursive;
     font-size: 30px;
 }
 
+/*This will center the two middle buttons on both pages.*/
 .twobuttons {
     /*padding-top: 2rem;*/
     /*margin-left: 45%;
@@ -54,6 +60,7 @@ button#dropdownMenuButton.btn.btn-secondary:active {
     padding-bottom: 5rem;
 }
 
+/*This will center all the contents on the 1st page.*/
 .container {
     /* margin-left: 17%;*/
     /*padding-left: 3%;*/
@@ -61,6 +68,7 @@ button#dropdownMenuButton.btn.btn-secondary:active {
     position: relative;
 }
 
+/*This will center the container on the 2nd page.*/
 .container2 {
     /*margin-left: 28%;
     position: relative;*/
@@ -72,10 +80,12 @@ div.container2 {
     box-sizing: border-box;
 }
 
+/*This will center all the cards on the 2nd page.*/
 .card {
     margin: auto;
 }
 
+/*This is for the contents within the cards.*/
 .card-header div:first-child {
     display: inline-block !important;
     width: 80%;
@@ -125,9 +135,12 @@ span {
     font-size: medium;
 }
 
+/*This will help to make sure that the modal backdrop works properly.*/
 .modal-backdrop {
     z-index: 0;
 }
+
+/* This is for the "create a post button and cancel button" This will change their hover effect.*/
 
 .btn-primary,
 .btn-primary:active {
@@ -149,19 +162,23 @@ span {
     font-size: medium;
 }
 
+/*This will smooth and add a border on the icons in the modal*/
 button {
     border-radius: 5px;
     border: 1px solid rgb(180, 178, 178);
     padding: 10px 20px;
 }
 
+/*This will make the "x" close button invisible.*/
 .btn-close {
     background: transparent;
 }
 
+
+/*This will make the two buttons transparent at all times while have a gray background when selected*/
 button.btn.btn-secondary,
 button.btn.btn-secondary:active {
-    border: 0px solid rgb(180, 178, 178);
+    border: 1px solid rgb(180, 178, 178);
     background-color: transparent !important;
     box-shadow: none !important;
     color: gray !important;
