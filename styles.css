@@ -26,7 +26,6 @@ button#dropdownMenuButton.btn.btn-secondary:active {
 
 .d-flex {
     padding-right: 6rem;
-
     margin-left: 1%;
 }
 
@@ -162,7 +161,7 @@ button {
 
 button.btn.btn-secondary,
 button.btn.btn-secondary:active {
-    border: 1px solid rgb(180, 178, 178);
+    border: 0px solid rgb(180, 178, 178);
     background-color: transparent !important;
     box-shadow: none !important;
     color: gray !important;
@@ -181,7 +180,6 @@ label.btn.btn-outline-primary:hover {
     background-color: transparent !important;
     box-shadow: none !important;
     color: gray !important;
-    border: 0px;
     outline: none;
     z-index: 0;
 }
